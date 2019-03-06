@@ -14,8 +14,26 @@ class MeetingTest(TestCase):
 
 class MinutesTest(TestCase):
     def test_stringOutput(self):
-        minutes=MeetingMinutes(minutes='great meeting')
+        minutes=MeetingMinutes(minutes='meetingid')
         self.assertEqual(str(minutes), MeetingMinutes.minutes)
 
     def test_tablename(self):
         self.assertEqual(str(MeetingMinutes._meta.db_table), 'meetingminutes')
+
+
+class Resource(TestCase):
+    def test_stringOutput(self):
+        resource=Resource(resourcename='userid')
+        self.assertEqual(str(resource), resource.resourcename)
+
+    def test_tablename(self):
+        self.assertEqual(str(Resource._meta.db_table), 'resource')
+
+class Event(TestCase):
+    def test_stringOutput(Self):
+        event=Event(event='eventtitle')
+        self.assertEqual(str(event), event.eventtitle)
+
+    def test_tablename(self):
+        self.assertEqual(str(Event._meta.db.table), 'event')
+        
